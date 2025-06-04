@@ -12,7 +12,7 @@ You’ll find details about my:
 - 🎥 YouTube content for students and researchers
 - ⚡ Technical & soft skills
 
-If you'd like to collaborate, have feedback, or just say hi, feel free to reach out via [LinkedIn](https://www.linkedin.com/in/your-link-here) or check out my [CV](https://hrnxb.github.io/cv/your-cv.pdf).
+If you'd like to collaborate, have feedback, or just say hi, feel free to reach out via [LinkedIn](https://www.linkedin.com/in/hamid-namjoo) or check out my [CV](https://hrnxb.github.io/cv/CV.pdf).
 
 ---
 
