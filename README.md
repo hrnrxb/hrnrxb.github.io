@@ -16,4 +16,4 @@ If you'd like to collaborate, have feedback, or just say hi, feel free to reach 
 
 ---
 
-**Built with 💻, curiosity, and a bit of lo-fi.**
+**Built with 💻, curiosity, and a bit of lo-fi.😁✌️**
