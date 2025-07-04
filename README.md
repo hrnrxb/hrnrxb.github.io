@@ -8,7 +8,7 @@ You’ll find details about my:
 
 - 🔎 Research interests (NLP, AI agents, ML/DL)
 - 🧠 Projects (chatbots, retrieval systems, and language tools)
-- 🎓 Education and TA roles
+- 🎓 Education and TA/RA roles
 - 🎥 YouTube content for students and researchers
 - ⚡ Technical & soft skills
 
