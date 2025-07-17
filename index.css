@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 html,
 body {
@@ -9,31 +9,21 @@ body {
   left: 0;
   top: 0;
   font-size: 100%;
+  background-color: #F1F1F1; 
 }
 
 /* ROOT FONT STYLES */
 
 * {
-  font-family: 'Lato', Helvetica, sans-serif;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif; 
   color: #333447;
   line-height: 1.5;
 }
 
-a {
-  color: #0366d6;
-  text-decoration: none;
-}
 
-a:visited {
-  color: #0366d6;
-  text-decoration: none;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif; /* فونت Montserrat برای تیترها */
 }
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* TYPOGRAPHY */
 
 h1 {
   font-size: 2.5rem;
@@ -65,6 +55,7 @@ p {
   line-height: 1.8;
 }
 
+
 .font-light {
   font-weight: 300;
 }
@@ -75,6 +66,22 @@ p {
 
 .font-heavy {
   font-weight: 700;
+}
+
+/* ... بقیه کدهای CSS شما ... */
+
+a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 /* POSITIONING */
@@ -144,32 +151,40 @@ p {
     border-radius: 10%;
 }
 
-@media only screen and (min-width: 768px) { 
+@media only screen and (min-width: 768px) {
     .avatar {width: 100%;}
   }
 
-
+/* Styles for particles.js background */
 #particles-js {
-    position: fixed; 
+    position: fixed;
     width: 100%;
     height: 100%;
     background-color: transparent;
-/*     background-color: #0d0d0d;  */
-    background-image: url(''); 
+    background-image: url('');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
-    z-index: -1; 
+    z-index: -1;
     top: 0;
     left: 0;
 }
 
-
+/* Ensure main content is above particles */
 body {
-    
-    margin: 0; 
-    padding: 0; 
+    /* these were already defined earlier, but ensuring consistency */
+    margin: 0;
+    padding: 0;
     position: relative;
     z-index: 1;
     background-color: #F1F1F1;
 }
+
+/* (Optional) Styles for specific sections to ensure they are above particles */
+/* You might not need these if .container has appropriate positioning/z-index */
+/*
+.container {
+    position: relative;
+    z-index: 2;
+}
+*/
