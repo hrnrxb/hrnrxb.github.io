@@ -22,7 +22,7 @@ body {
 
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif; /* فونت Montserrat برای تیترها */
+  font-family: 'Montserrat', sans-serif; 
 }
 
 h1 {
@@ -68,11 +68,10 @@ p {
   font-weight: 700;
 }
 
-/* ... بقیه کدهای CSS شما ... */
-
 a {
   color: #0366d6;
   text-decoration: none;
+  transition: color 0.3s ease-out, text-decoration 0.3s ease-out;
 }
 
 a:visited {
@@ -81,6 +80,7 @@ a:visited {
 }
 
 a:hover {
+  color: #0056b3;
   text-decoration: underline;
 }
 
@@ -135,6 +135,12 @@ a:hover {
     margin-right: 10px;
     height: 1em;
     width: 1em;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+#social-links a:hover img {
+    transform: scale(1.1); 
+    opacity: 0.8;
 }
 
 .emoji {
@@ -188,3 +194,52 @@ body {
     z-index: 2;
 }
 */
+
+.button-cta, .button-cta-secondary {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1em;
+    transition: all 0.3s ease-in-out;
+    margin-top: 20px;
+}
+
+.button-cta {
+    background-color: #0366d6;
+    color: #ffffff;
+    border: 2px solid #0366d6;
+}
+
+.button-cta:hover {
+    background-color: #0056b3;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button-cta-secondary {
+    background-color: transparent;
+    color: #0366d6;
+    border: 2px solid #0366d6;
+}
+
+.button-cta-secondary:hover {
+    background-color: #0366d6;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 576px) {
+    .button-cta, .button-cta-secondary {
+        display: block;
+        width: calc(100% - 20px);
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+
