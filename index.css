@@ -190,7 +190,7 @@ a:hover {
     border: 2px solid #0366d6;
 }
 
-.button-cta:hover {
+a.button-cta:hover {
     background-color: transparent;
     color: #0366d6;
     transform: translateY(-2px);
@@ -204,7 +204,7 @@ a:hover {
     border: 2px solid #0366d6;
 }
 
-.button-cta-secondary:hover {
+a.button-cta-secondary:hover {
     background-color: #0366d6;
     color: #ffffff;
     transform: translateY(-2px);
