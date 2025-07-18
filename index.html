@@ -481,14 +481,19 @@
             "Senior Computer Engineering student",
             "Part-time Content Creator"
         ],
-        typeSpeed: 60,
-        backSpeed: 45,
-        backDelay: 1500,
-        startDelay: 500,
+        typeSpeed: 35,
+        backSpeed: 20,
+        backDelay: 1000,
+        startDelay: 300,
         loop: true,
-        cursorChar: '|',
+        cursorChar: '_',
         shuffle: false,
-        smartBackspace: true
+        smartBackspace: true,
+        showCursor: true,
+        cursorChar: '_',
+        preStringTyped: (arrayPos, self) => {self.el.style.color = 'lime';},
+        onStringTyped: (arrayPos, self) => {self.el.style.color = 'white';}
+        
     });
     
 </script>
