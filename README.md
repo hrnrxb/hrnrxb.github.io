@@ -2,7 +2,7 @@
 
 This is the source code of my personal website, hosted at **[hrnxb.github.io](https://hrnxb.github.io)**.
 
-It’s built with HTML, CSS, and Bootstrap Grid, and designed to showcase my background in **AI, Natural Language Processing, and Data Analysis**.
+It’s built with HTML, CSS, JS and Bootstrap Grid, and designed to showcase my background in **AI, Natural Language Processing, and Data Analysis**.
 
 You’ll find details about my:
 
