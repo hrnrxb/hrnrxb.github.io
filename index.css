@@ -136,6 +136,7 @@ a:hover {
 }
 
 #social-links a:hover img {
+    text-decoration: none;
     transform: scale(1.1);
     opacity: 0.8;
 }
