@@ -25,7 +25,7 @@
             
             <div class="col-md-9 col-sm-12">
                 <h1>Hamid Namjoo</h1>
-                <h3>Senior Computer Engineering student · Data Analyst · Part-time Content Creator</h3>
+                <h3><span id="typed-output"></span></h3>
 
                 <div class="font-heavy"><a href="CV\CV.pdf"  target="_blank"><img src="img/cv_emoji.png" class="emoji"> Download my CV</a></div>
                 
@@ -355,6 +355,7 @@
     </div>
 
 <script src="particles.min.js"></script>
+<script src="js/typed.umd.js"></script> <script>
 <script>
     const particlesConfig = {
       "particles": {
@@ -471,8 +472,27 @@
     } else {
         console.error("particles.js library not loaded.");
     }
+
+    
+    // Typed.js Initialization
+    var typed = new Typed('#typed-output', {
+        strings: [
+            "Senior Computer Engineering student",
+            "Data Analyst",
+            "Part-time Content Creator",
+            "NLP Enthusiast"
+        ],
+        typeSpeed: 50,
+        backSpeed: 25,
+        backDelay: 1500,
+        startDelay: 500,
+        loop: true,
+        cursorChar: '|',
+        shuffle: false,
+        smartBackspace: true
+    });
     
 </script>
-
+ 
 </body>
 </html>
