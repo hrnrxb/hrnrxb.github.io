@@ -1,107 +1,104 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
+* {
+    box-sizing: border-box;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    color: #333447;
+    line-height: 1.5;
+}
+
 html,
 body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  left: 0;
-  top: 0;
-  font-size: 100%;
-  background-color: #F1F1F1; 
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+    font-size: 100%;
+    background-color: #F1F1F1;
+    position: relative;
+    z-index: 1;
 }
-
-/* ROOT FONT STYLES */
-
-* {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif; 
-  color: #333447;
-  line-height: 1.5;
-}
-
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif; 
+    font-family: 'Montserrat', sans-serif;
 }
 
 h1 {
-  font-size: 2.5rem;
+    font-size: 2.5rem;
 }
 
 h2 {
-  font-size: 2rem;
+    font-size: 2rem;
 }
 
 h3 {
-  font-size: 1.375rem;
+    font-size: 1.375rem;
 }
 
 h4 {
-  font-size: 1.125rem;
+    font-size: 1.125rem;
 }
 
 h5 {
-  font-size: 1rem;
+    font-size: 1rem;
 }
 
 h6 {
-  font-size: 0.875rem;
+    font-size: 0.875rem;
 }
 
 p {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.8;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.8;
 }
 
-
 .font-light {
-  font-weight: 300;
+    font-weight: 300;
 }
 
 .font-regular {
-  font-weight: 400;
+    font-weight: 400;
 }
 
 .font-heavy {
-  font-weight: 700;
+    font-weight: 700;
 }
 
 a {
-  color: #0366d6;
-  text-decoration: none;
-  transition: color 0.3s ease-out, text-decoration 0.3s ease-out;
+    color: #0366d6;
+    text-decoration: none;
+    transition: color 0.3s ease-out, text-decoration 0.3s ease-out;
 }
 
 a:visited {
-  color: #0366d6;
-  text-decoration: none;
+    color: #0366d6;
+    text-decoration: none;
 }
 
 a:hover {
-  color: #0056b3;
-  text-decoration: underline;
+    color: #0056b3;
+    text-decoration: underline;
 }
 
-/* POSITIONING */
-
 .left {
-  text-align: left;
+    text-align: left;
 }
 
 .right {
-  text-align: right;
+    text-align: right;
 }
 
 .center {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .justify {
-  text-align: justify;
+    text-align: justify;
 }
 
 #first-row {
@@ -139,7 +136,7 @@ a:hover {
 }
 
 #social-links a:hover img {
-    transform: scale(1.1); 
+    transform: scale(1.1);
     opacity: 0.8;
 }
 
@@ -159,9 +156,8 @@ a:hover {
 
 @media only screen and (min-width: 768px) {
     .avatar {width: 100%;}
-  }
+}
 
-/* Styles for particles.js background */
 #particles-js {
     position: fixed;
     width: 100%;
@@ -175,25 +171,6 @@ a:hover {
     top: 0;
     left: 0;
 }
-
-/* Ensure main content is above particles */
-body {
-    /* these were already defined earlier, but ensuring consistency */
-    margin: 0;
-    padding: 0;
-    position: relative;
-    z-index: 1;
-    background-color: #F1F1F1;
-}
-
-/* (Optional) Styles for specific sections to ensure they are above particles */
-/* You might not need these if .container has appropriate positioning/z-index */
-/*
-.container {
-    position: relative;
-    z-index: 2;
-}
-*/
 
 .button-cta, .button-cta-secondary {
     display: inline-block;
@@ -240,6 +217,19 @@ body {
         margin-right: 10px;
         margin-bottom: 10px;
     }
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .col-12 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
 }
-
-
