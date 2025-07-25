@@ -163,7 +163,7 @@ a:hover {
 
     .theme-toggle-mobile {
         position: fixed;
-        top: 2.5px;
+        top: 5px;
         left: 12px;
         width: 40px;
         height: 40px;
@@ -320,8 +320,8 @@ a:hover {
 
     .close-menu.mobile-only {
         position: fixed;
-        top: 20px;
-        right: 20px;
+        top: 5px;
+        right: 26px;
         width: 40px;
         height: 40px;
         background-color: rgba(255, 255, 255, 0.9);
@@ -813,6 +813,17 @@ body.dark-mode {
 .theme-toggle-mobile.click-animation,
 #theme-toggle-desktop.click-animation {
     transform: rotate(45deg) scale(1.1);
+}
+
+#theme-toggle-desktop{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: transform 0.4s ease;
 }
 
 #theme-toggle:hover {
