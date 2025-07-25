@@ -18,10 +18,12 @@
 <body>
     <div id="particles-js"></div>
     
-    <div class="theme-toggle-fixed" id="theme-toggle-fixed">🌓</div>
-
+    
+    <div class="theme-toggle-mobile" id="theme-toggle-mobile">🌓</div>
+    
     <nav class="navbar">
         <div class="nav-container">
+            
             <div class="nav-toggle" id="mobile-menu">
                 <span class="menu-text mobile-only">Menu</span>
                 <div class="hamburger-lines">
@@ -31,6 +33,7 @@
                 </div>
             </div>
     
+            
             <ul class="nav-menu">
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -40,6 +43,8 @@
                 <li><a href="#education">Education</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#hobbies">Hobbies</a></li>
+                
+                <li id="theme-toggle-desktop" class="desktop-only">🌓</li>
             </ul>
     
             <div class="close-menu mobile-only" id="close-menu">×</div>
@@ -538,22 +543,25 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const themeToggleInline = document.getElementById('theme-toggle'); 
-        const themeToggleFixed = document.getElementById('theme-toggle-fixed');
-        const allThemeToggles = [themeToggleInline, themeToggleFixed].filter(Boolean);
+
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+        const themeToggleDesktop = document.getElementById('theme-toggle-desktop');
+        const allToggles = [themeToggleMobile, themeToggleDesktop].filter(Boolean);
+
 
         if (localStorage.getItem('dark-mode') === 'enabled') {
             document.body.classList.add('dark-mode');
-            allThemeToggles.forEach(btn => {
-                if (btn) btn.textContent = '☀️';
+            allToggles.forEach(toggle => {
+                if (toggle) toggle.textContent = '☀️';
             });
         } else {
-            allThemeToggles.forEach(btn => {
-                if (btn) btn.textContent = '🌓';
+            allToggles.forEach(toggle => {
+                if (toggle) toggle.textContent = '🌓';
             });
         }
 
-        allThemeToggles.forEach(toggle => {
+
+        allToggles.forEach(toggle => {
             toggle.addEventListener('click', function () {
                 toggle.classList.add('click-animation');
                 setTimeout(() => {
@@ -564,13 +572,13 @@
 
                 if (document.body.classList.contains('dark-mode')) {
                     localStorage.setItem('dark-mode', 'enabled');
-                    allThemeToggles.forEach(btn => {
-                        if (btn) btn.textContent = '☀️';
+                    allToggles.forEach(t => {
+                        if (t) t.textContent = '☀️';
                     });
                 } else {
                     localStorage.setItem('dark-mode', 'disabled');
-                    allThemeToggles.forEach(btn => {
-                        if (btn) btn.textContent = '🌓';
+                    allToggles.forEach(t => {
+                        if (t) t.textContent = '🌓';
                     });
                 }
             });
