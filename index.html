@@ -17,6 +17,20 @@
 <body>
     <div id="particles-js"></div>
     
+    <nav class="navbar">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li id="theme-toggle" title="Toggle Dark Mode">🌓</li>
+        </ul>
+    </nav>
+
     <div class="container">
         <div class="row" id="first-row">
             <div class="col-md-3 col-sm-12">
@@ -31,7 +45,7 @@
                 
                 <div id="social-links">
                     <a href="mailto:hamidrezanamjoomanesh@gmail.com" target="_blank"><img src="img/email.png"></a>
-                    <a href="https://www.linkedin.com/in/hamid-namjoo/" target="_blank"><img src="img/linkedin.png"</a>
+                    <a href="https://www.linkedin.com/in/hamid-namjoo/" target="_blank"><img src="img/linkedin.png"></a>
                     <a href="https://github.com/hrnrxb" target="_blank"><img src="img/github.png"></a>
                     <a href="https://www.youtube.com/@HamidDidIt" target="_blank"><img src="img/youtube.png"></a>
                 </div>
@@ -42,7 +56,7 @@
         
         <div class="row">
             <div class="col-12">
-                <h2> <img src="img/aboutme_emoji.png" class="emoji"> About Me </h2>
+                <h2  id="about"> <img src="img/aboutme_emoji.png" class="emoji"> About Me </h2>
                 <p class="justify">
                     Hi! I’m Hamid Namjoo — a senior Computer Engineering student from Shiraz, Iran, driven by a profound passion for <b>Natural Language Processing (NLP)</b>, <b>AI agents</b>, and crafting human-centered technology. My academic journey is deeply intertwined with <b>exploring the nuances of language through computational models</b>, a field where I seek to bridge theoretical understanding with practical application.
                 </p>
@@ -55,6 +69,7 @@
                 <p class="justify">
                     I am on a mission to push the boundaries of AI, particularly in how it empowers human communication and problem-solving. If you share this passion for language, learning, and shaping the future of AI—<i>let’s connect</i>. I'm always eager to collaborate, engage in deep discussions, or simply share ideas about the exciting frontiers of NLP.
                 </p>
+                <h2 id="contact" class="center">Contact Me 👇 </h2>
                 <p class="center">
                     <a href="mailto:hamidrezanamjoomanesh@gmail.com" class="button-cta" rel="noopener noreferrer">
                         📧 Email
@@ -68,7 +83,7 @@
         
         <div class="row">
             <div class="col-12">
-                <h2> <img src="img\research_emoji.png" class="emoji"> Research Interests </h2>
+                <h2  id="research">  <img src="img\research_emoji.png" class="emoji"> Research Interests </h2>
                 <ul>
                     <li><b>Natural Language Processing</b></li>
                     <li><b>Machine Learning</b></li>
@@ -80,7 +95,7 @@
 
         <div class="row">
             <div class="col-12">
-                <h2> <img src="img/skills_emoji.png" class="emoji"> Skills </h2>
+                <h2  id="skills">  <img src="img/skills_emoji.png" class="emoji"> Skills </h2>
         
                 <div class="row">
                     <div class="col-md-6 col-lg-4"> <b>Programming Languages</b>
@@ -185,7 +200,7 @@
         
         <div class="row">
             <div class="col-12">
-                <h2> <img src="img/projects_emoji.png" class="emoji"> Selected Projects </h2>
+                <h2  id="projects">  <img src="img/projects_emoji.png" class="emoji"> Selected Projects </h2>
                 <ul class="justify">
                     <li>
                         <b>Retrieval-Augmented Academic Advisor Chatbot</b><br>
@@ -259,7 +274,7 @@
       
         <div class="row">
             <div class="col-12">
-                <h2> <img src="img/education_emoji.png" class="emoji"> Education </h2>
+                <h2  id="education">  <img src="img/education_emoji.png" class="emoji"> Education </h2>
                 <ul>
                     <li><b>B.Sc., Computer Engineering</b><br> Islamic Azad University of Shiraz<br>Sep 2022-Present</li>
                 </ul>
@@ -268,7 +283,7 @@
 
         <div class="row">
             <div class="col-12">
-                <h2> <img src="img/experience_emoji.png" class="emoji"> Experience </h2>
+                <h2  id="experience">  <img src="img/experience_emoji.png" class="emoji"> Experience </h2>
                 <ul class="justify">
         
                     <li><b>Founder, Artificial Intelligence Association of Shiraz IAU</b><br>
@@ -321,7 +336,7 @@
         
         <div class="row">
             <div class="col-12">
-                <h2> <img src="img/hobbies_emoji.png" class="emoji"> Hobbies </h2>
+                <h2  id="hobbies">  <img src="img/hobbies_emoji.png" class="emoji"> Hobbies </h2>
                 <ul class="justify">
                     <li><b>YouTube Channel:</b><br>
                         I run the <a href="https://www.youtube.com/@HamidDidIt" target="_blank">HamidDidIt YouTube Channel</a>, where I share in-depth videos on AI, Machine Learning, Deep Learning, and Natural Language Processing. I focus on making technical content clear, project-driven, and genuinely helpful for students and researchers.
@@ -353,7 +368,7 @@
             </div>
         </div>  
     </div>
-    </div>
+    <!-- </div> -->
 
 <script src="particles.min.js"></script>
 <script src="typed.umd.js"></script>
@@ -474,8 +489,6 @@
         console.error("particles.js library not loaded.");
     }
 
-    
-    // Typed.js Initialization
     var typed = new Typed('#typed-output', {
         strings: [
             "Junior Data Analyst",
@@ -499,5 +512,49 @@
     
 </script>
  
+<script>
+    window.addEventListener('scroll', function () {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+</script>
+
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+
+    
+    if (localStorage.getItem('dark-mode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+        themeToggle.textContent = '☀️';
+    } else {
+        themeToggle.textContent = '🌓';
+    }
+
+    themeToggle.addEventListener('click', function () {
+        
+        themeToggle.classList.add('click-animation');
+
+        
+        setTimeout(() => {
+            themeToggle.classList.remove('click-animation');
+        }, 400);
+
+        
+        document.body.classList.toggle('dark-mode');
+
+        if (document.body.classList.contains('dark-mode')) {
+            localStorage.setItem('dark-mode', 'enabled');
+            themeToggle.textContent = '☀️';
+        } else {
+            localStorage.setItem('dark-mode', 'disabled');
+            themeToggle.textContent = '🌓';
+        }
+    });
+</script>
+
 </body>
 </html>
