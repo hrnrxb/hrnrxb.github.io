@@ -18,6 +18,8 @@
 <body>
     <div id="particles-js"></div>
     
+    <div class="theme-toggle-fixed" id="theme-toggle-fixed">🌓</div>
+
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-toggle" id="mobile-menu">
@@ -38,8 +40,8 @@
                 <li><a href="#education">Education</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#hobbies">Hobbies</a></li>
-                <li id="theme-toggle" title="Toggle Dark Mode">🌓</li>
             </ul>
+    
             <div class="close-menu mobile-only" id="close-menu">×</div>
             <div class="nav-overlay" id="overlay"></div>
         </div>
@@ -535,38 +537,46 @@
 </script>
 
 <script>
-    const themeToggle = document.getElementById('theme-toggle');
+    document.addEventListener('DOMContentLoaded', function () {
+        const themeToggleInline = document.getElementById('theme-toggle'); 
+        const themeToggleFixed = document.getElementById('theme-toggle-fixed');
+        const allThemeToggles = [themeToggleInline, themeToggleFixed].filter(Boolean);
 
-    
-    if (localStorage.getItem('dark-mode') === 'enabled') {
-        document.body.classList.add('dark-mode');
-        themeToggle.textContent = '☀️';
-    } else {
-        themeToggle.textContent = '🌓';
-    }
-
-    themeToggle.addEventListener('click', function () {
-        
-        themeToggle.classList.add('click-animation');
-
-        
-        setTimeout(() => {
-            themeToggle.classList.remove('click-animation');
-        }, 400);
-
-        
-        document.body.classList.toggle('dark-mode');
-
-        if (document.body.classList.contains('dark-mode')) {
-            localStorage.setItem('dark-mode', 'enabled');
-            themeToggle.textContent = '☀️';
+        if (localStorage.getItem('dark-mode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+            allThemeToggles.forEach(btn => {
+                if (btn) btn.textContent = '☀️';
+            });
         } else {
-            localStorage.setItem('dark-mode', 'disabled');
-            themeToggle.textContent = '🌓';
+            allThemeToggles.forEach(btn => {
+                if (btn) btn.textContent = '🌓';
+            });
         }
+
+        allThemeToggles.forEach(toggle => {
+            toggle.addEventListener('click', function () {
+                toggle.classList.add('click-animation');
+                setTimeout(() => {
+                    toggle.classList.remove('click-animation');
+                }, 400);
+
+                document.body.classList.toggle('dark-mode');
+
+                if (document.body.classList.contains('dark-mode')) {
+                    localStorage.setItem('dark-mode', 'enabled');
+                    allThemeToggles.forEach(btn => {
+                        if (btn) btn.textContent = '☀️';
+                    });
+                } else {
+                    localStorage.setItem('dark-mode', 'disabled');
+                    allThemeToggles.forEach(btn => {
+                        if (btn) btn.textContent = '🌓';
+                    });
+                }
+            });
+        });
     });
 </script>
-
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
