@@ -20,9 +20,12 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+                <span class="menu-text">Menu</span>
+                <div class="hamburger-lines">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </div>
     
             <ul class="nav-menu">
@@ -36,6 +39,7 @@
                 <li><a href="#hobbies">Hobbies</a></li>
                 <li id="theme-toggle" title="Toggle Dark Mode">🌓</li>
             </ul>
+            <div class="nav-overlay" id="overlay"></div>
         </div>
     </nav>
 
@@ -568,14 +572,31 @@
 <script>
     const mobileMenu = document.getElementById('mobile-menu');
     const navMenu = document.querySelector('.nav-menu');
+    const overlay = document.getElementById('overlay');
 
     mobileMenu.addEventListener('click', function () {
         navMenu.classList.toggle('active');
+        overlay.style.display = navMenu.classList.contains('active') ? 'block' : 'none';
+        setTimeout(() => {
+            overlay.style.opacity = navMenu.classList.contains('active') ? '1' : '0';
+        }, 10);
+    });
+
+    overlay.addEventListener('click', function () {
+        navMenu.classList.remove('active');
+        overlay.style.opacity = '0';
+        setTimeout(() => {
+            overlay.style.display = 'none';
+        }, 300);
     });
 
     document.querySelectorAll('.nav-menu a').forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
+            overlay.style.opacity = '0';
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 300);
         });
     });
 </script>
