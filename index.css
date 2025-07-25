@@ -385,7 +385,9 @@ a:hover {
 
     
     .container {
-        margin-top: 70px; 
+        margin-top: 70px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
 
@@ -398,6 +400,12 @@ a:hover {
     #first-row p {
         font-size: 1rem;
         line-height: 1.7;
+    }
+
+    .justify,
+    p {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
 
