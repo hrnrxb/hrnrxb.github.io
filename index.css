@@ -155,17 +155,29 @@ a:hover {
     border-radius: 10%;
 }
 
-@media only screen and (min-width: 768px) {
+@media (max-width: 768px) {
     .avatar {width: 100%;}
 
+    .navbar {
+/*          flex-wrap: wrap; */
+        justify-content: center;
+        flex-wrap: nowrap
+        overflow-x: auto;
+        padding: 3px 0;
+    }
+    
     .navbar ul {
-        gap: 14px;
-        justify-content: flex-start;
-        padding-left: 20px;
+        padding: 3px 5px;
+        margin: 0 8px;
+        font-size: 0.70em;
+        white-space: nowrap;
     }
     .navbar a {
-        font-size: 0.9rem;
-        padding: 5px 0;
+        font-size: 0.70rem;
+        padding: 3px 0;
+        margin: 0 8px;
+        white-space: nowrap;
+        
     }
     .navbar a::before {
         height: 1.8px;
@@ -226,7 +238,7 @@ a.button-cta-secondary:hover {
     text-decoration: none;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 480px) {
     .button-cta, .button-cta-secondary {
         display: block;
         width: calc(100% - 20px);
@@ -235,6 +247,21 @@ a.button-cta-secondary:hover {
         margin-bottom: 10px;
     }
 
+    .navbar {
+/*          flex-wrap: wrap; */
+        justify-content: center;
+        flex-wrap: nowrap
+        overflow-x: auto;
+        padding: 3px 0;
+    }
+    
+    .navbar ul {
+        padding: 2px 3px;
+        margin: 0 5px;
+        font-size: 0.60em;
+        white-space: nowrap;
+    }
+    
     .container {
         padding-left: 15px;
         padding-right: 15px;
@@ -251,9 +278,11 @@ a.button-cta-secondary:hover {
     }
 }
 
+
 html {
     scroll-behavior: smooth;
 }
+
 
 .navbar {
     position: fixed;
