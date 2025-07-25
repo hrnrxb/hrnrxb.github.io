@@ -521,13 +521,18 @@ a.button-cta-secondary:hover {
 
 
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     background-color: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(0px);
     -webkit-backdrop-filter: blur(0px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 2px 6px;
+    padding: 12px 20px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     transition: all 0.4s ease;
+    z-index: 1000;
 }
 
 .navbar ul {
@@ -579,7 +584,7 @@ a.button-cta-secondary:hover {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
-    padding: 1px 3px;
+    padding: 12px 20px;
 }
 
 h2[id] {
