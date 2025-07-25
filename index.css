@@ -157,6 +157,20 @@ a:hover {
 
 @media only screen and (min-width: 768px) {
     .avatar {width: 100%;}
+
+    .navbar ul {
+        gap: 14px;
+        justify-content: flex-start;
+        padding-left: 20px;
+    }
+    .navbar a {
+        font-size: 0.9rem;
+        padding: 5px 0;
+    }
+    .navbar a::before {
+        height: 1.8px;
+    }
+
 }
 
 #particles-js {
@@ -235,4 +249,198 @@ a.button-cta-secondary:hover {
         max-width: 100%;
         height: auto;
     }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 6px 10px; 
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    transition: all 0.4s ease;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 26px;
+}
+
+.navbar a {
+    color: #0366d6;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 4px 0;
+    position: relative;
+    transition: color 0.3s ease, transform 0.2s ease;
+    transform: translateY(0);
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: #afa258; 
+    transform: translateX(-50%) scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: center;
+}
+
+.navbar a:hover::before {
+    transform: translateX(-50%) scaleX(1);
+}
+
+.navbar a:hover {
+    color: #004aad; 
+    transform: translateY(-3px);
+}
+
+.navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px); 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+    padding: 1px 3px;
+}
+
+h2[id] {
+    scroll-margin-top: 70px;
+}
+
+.container {
+    margin-top: 80px;
+}
+
+
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6 {
+    color: #ffffff !important;
+}
+
+
+.dark-mode a {
+    color: #64b5f6 !important;
+}
+
+.dark-mode a:hover {
+    color: #90caf9 !important;
+    text-decoration: none;
+}
+
+.dark-mode .button-cta {
+    background-color: #1976d2;
+    border: 2px solid #1976d2;
+    color: white;
+}
+
+.dark-mode .button-cta:hover {
+    background-color: transparent;
+    color: #1976d2;
+}
+
+.dark-mode .button-cta-secondary {
+    background-color: transparent;
+    color: #64b5f6;
+    border: 2px solid #64b5f6;
+}
+
+.dark-mode .button-cta-secondary:hover {
+    background-color: #1976d2;
+    color: white;
+}
+
+.dark-mode .navbar {
+    background-color: rgba(30, 30, 30, 0.98);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(2px); 
+    -webkit-backdrop-filter: blur(2px); 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    padding: 6px 14px;
+}
+
+.dark-mode .container {
+    background-color: rgba(20, 20, 20, 0.7);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode #particles-js {
+    background-color: #0a0a0a;
+}
+
+#theme-toggle {
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: transform 0.4s ease, background-color 0.4s ease, color 0.4s ease;
+}
+
+#theme-toggle.click-animation {
+    transform: rotate(45deg) scale(1.1);
+}
+
+#theme-toggle:hover {
+    transform: scale(1.1);
+    background-color: #f0f0f0;
+}
+
+.dark-mode #theme-toggle:hover {
+    background-color: #333;
+}
+
+.dark-mode p,
+.dark-mode ul,
+.dark-mode li,
+.dark-mode i,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6 {
+    color: #dfdfdf !important;
+}
+
+.dark-mode ul ul,
+.dark-mode ol {
+    color: #aaaaaa;
+}
+
+.dark-mode b,
+.dark-mode strong {
+    color: #ffffff !important;
 }
