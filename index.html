@@ -42,8 +42,7 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#experience">Experience</a></li>
-                <li><a href="#hobbies">Hobbies</a></li>
-                
+                <li><a href="#hobbies">Hobbies</a></li> 
                 <li id="theme-toggle-desktop" class="desktop-only">🌓</li>
             </ul>
     
@@ -549,6 +548,12 @@
         const allToggles = [themeToggleMobile, themeToggleDesktop].filter(Boolean);
 
 
+        if (allToggles.length === 0) {
+            console.warn('Button not found!');
+            return;
+        }
+
+
         if (localStorage.getItem('dark-mode') === 'enabled') {
             document.body.classList.add('dark-mode');
             allToggles.forEach(toggle => {
@@ -563,10 +568,12 @@
 
         allToggles.forEach(toggle => {
             toggle.addEventListener('click', function () {
-                toggle.classList.add('click-animation');
+
+                this.classList.add('click-animation');
                 setTimeout(() => {
-                    toggle.classList.remove('click-animation');
+                    this.classList.remove('click-animation');
                 }, 400);
+
 
                 document.body.classList.toggle('dark-mode');
 
