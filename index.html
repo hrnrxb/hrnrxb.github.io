@@ -542,52 +542,32 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-
         const themeToggleMobile = document.getElementById('theme-toggle-mobile');
         const themeToggleDesktop = document.getElementById('theme-toggle-desktop');
-        const allToggles = [themeToggleMobile, themeToggleDesktop].filter(Boolean);
 
 
-        if (allToggles.length === 0) {
-            console.warn('Button not found!');
-            return;
-        }
+        [themeToggleMobile, themeToggleDesktop].forEach(toggle => {
+            if (!toggle) return;
 
 
-        if (localStorage.getItem('dark-mode') === 'enabled') {
-            document.body.classList.add('dark-mode');
-            allToggles.forEach(toggle => {
-                if (toggle) toggle.textContent = '☀️';
-            });
-        } else {
-            allToggles.forEach(toggle => {
-                if (toggle) toggle.textContent = '🌓';
-            });
-        }
+            if (localStorage.getItem('dark-mode') === 'enabled') {
+                toggle.textContent = '☀️';
+            } else {
+                toggle.textContent = '🌓';
+            }
 
 
-        allToggles.forEach(toggle => {
             toggle.addEventListener('click', function () {
-
                 this.classList.add('click-animation');
-                setTimeout(() => {
-                    this.classList.remove('click-animation');
-                }, 400);
-
+                setTimeout(() => this.classList.remove('click-animation'), 400);
 
                 document.body.classList.toggle('dark-mode');
 
-                if (document.body.classList.contains('dark-mode')) {
-                    localStorage.setItem('dark-mode', 'enabled');
-                    allToggles.forEach(t => {
-                        if (t) t.textContent = '☀️';
-                    });
-                } else {
-                    localStorage.setItem('dark-mode', 'disabled');
-                    allToggles.forEach(t => {
-                        if (t) t.textContent = '🌓';
-                    });
-                }
+                const icon = document.body.classList.contains('dark-mode') ? '☀️' : '🌓';
+                document.querySelectorAll('#theme-toggle-mobile, #theme-toggle-desktop')
+                        .forEach(t => { if (t) t.textContent = icon; });
+
+                localStorage.setItem('dark-mode', document.body.classList.contains('dark-mode') ? 'enabled' : 'disabled');
             });
         });
     });
