@@ -28,19 +28,23 @@
                 </div>
             </div>
     
-            <ul class="nav-menu">
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#hobbies">Hobbies</a></li>
-                <li id="theme-toggle" title="Toggle Dark Mode">🌓</li>
-            </ul>
-            <div class="close-menu mobile-only" id="close-menu">×</div>
-            <div class="nav-overlay" id="overlay"></div>
+            <div class="nav-menu-modal" id="nav-menu-modal">
+                <div class="nav-menu-content">
+                    <ul class="nav-menu-list">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#research">Research</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#education">Education</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#hobbies">Hobbies</a></li>
+                        <li id="theme-toggle" title="Toggle Dark Mode">🌓</li>
+                    </ul>
+                    <div class="close-menu" id="close-menu">×</div>
+                    <div class="nav-overlay" id="overlay"></div>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -570,48 +574,34 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const mobileMenu = document.getElementById('mobile-menu');
-        const navMenu = document.querySelector('.nav-menu');
-        const overlay = document.getElementById('overlay');
+        const navMenuModal = document.getElementById('nav-menu-modal');
         const closeMenu = document.getElementById('close-menu');
 
 
         mobileMenu.addEventListener('click', function () {
-            navMenu.classList.add('active');
-            overlay.style.display = 'block';
-            setTimeout(() => {
-                overlay.style.opacity = '1';
-            }, 10);
-
-            this.classList.toggle('active');
+            navMenuModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
         });
 
-
-        overlay.addEventListener('click', function () {
-            navMenu.classList.remove('active');
-            mobileMenu.classList.remove('active');
-            overlay.style.opacity = '0';
-            setTimeout(() => {
-                overlay.style.display = 'none';
-            }, 300);
-        });
-
+    
         closeMenu.addEventListener('click', function () {
-            navMenu.classList.remove('active');
-            mobileMenu.classList.remove('active');
-            overlay.style.opacity = '0';
-            setTimeout(() => {
-                overlay.style.display = 'none';
-            }, 300);
+            navMenuModal.classList.remove('active');
+            document.body.style.overflow = ''; 
         });
 
-        document.querySelectorAll('.nav-menu a').forEach(link => {
+     
+        navMenuModal.addEventListener('click', function (e) {
+            if (e.target === navMenuModal) {
+                navMenuModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+
+        document.querySelectorAll('.nav-menu-list a').forEach(link => {
             link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                overlay.style.opacity = '0';
-                setTimeout(() => {
-                    overlay.style.display = 'none';
-                }, 300);
+                navMenuModal.classList.remove('active');
+                document.body.style.overflow = '';
             });
         });
     });
