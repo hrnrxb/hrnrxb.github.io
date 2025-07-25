@@ -156,14 +156,23 @@ a:hover {
 }
 
 .mobile-only {
-    display: none;
+    display: none; 
 }
+
+.desktop-only {
+    display: flex; 
+}
+
+.theme-toggle-mobile {
+    display: none; 
+}
+
 
 @media (max-width: 768px) {
 
     .theme-toggle-mobile {
         position: fixed;
-        top: 5px;
+        top: 3px;
         left: 12px;
         width: 40px;
         height: 40px;
@@ -423,6 +432,13 @@ a:hover {
         padding-right: 20px;
     }
 
+    .theme-toggle-mobile {
+        display: flex !important;
+    }
+
+    .nav-menu.active #theme-toggle-desktop {
+        display: none !important;
+    }
 
     .desktop-only {
         display: none;
