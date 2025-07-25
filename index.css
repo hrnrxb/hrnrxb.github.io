@@ -156,33 +156,42 @@ a:hover {
 }
 
 @media (max-width: 768px) {
-    .avatar {width: 50%;}
+    .avatar {
+        width: 50%;
+    }
 
     .navbar {
-/*          flex-wrap: wrap; */
-        justify-content: center;
-        flex-wrap: nowrap
-        overflow-x: auto;
-        padding: 1px 0;
+        padding: 6px 10px; 
     }
-    
+
     .navbar ul {
-        padding: 1px 3px;
-        margin: 0 4px;
-        font-size: 0.50em;
-        white-space: nowrap;
+        flex-wrap: nowrap !important;
+        overflow-x: auto;
+        padding: 0 10px;
+        margin: 0;
+        gap: 16px !important;
+        scrollbar-width: none; 
     }
+
+    .navbar ul::-webkit-scrollbar {
+        display: none; 
+    }
+
     .navbar a {
-        font-size: 0.70rem;
-        padding: 3px 0;
-        margin: 0 8px;
+        font-size: 0.85rem !important;
+        padding: 4px 8px !important;
         white-space: nowrap;
-        
     }
+
     .navbar a::before {
         height: 1.8px;
     }
 
+    #theme-toggle {
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+    }
 }
 
 #particles-js {
@@ -248,18 +257,23 @@ a.button-cta-secondary:hover {
     }
 
     .navbar {
-/*          flex-wrap: wrap; */
-        justify-content: center;
-        flex-wrap: nowrap
-        overflow-x: auto;
-        padding: 1px 0;
+        padding: 2px 6px;
     }
     
     .navbar ul {
-        padding: 1px 2px;
-        margin: 0 3px;
-        font-size: 0.40em;
-        white-space: nowrap;
+        padding: 0 8px;
+        gap: 12px;
+    }
+    
+    .navbar a {
+        font-size: 0.8rem;
+        padding: 4px 6px;
+    }
+
+    #theme-toggle {
+        width: 34px;
+        height: 34px;
+        font-size: 1rem;
     }
     
     .container {
