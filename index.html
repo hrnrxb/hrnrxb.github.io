@@ -18,17 +18,25 @@
     <div id="particles-js"></div>
     
     <nav class="navbar">
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#hobbies">Hobbies</a></li>
-            <li id="theme-toggle" title="Toggle Dark Mode">🌓</li>
-        </ul>
+        <div class="nav-container">
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+    
+            <ul class="nav-menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
+                <li id="theme-toggle" title="Toggle Dark Mode">🌓</li>
+            </ul>
+        </div>
     </nav>
 
     <div class="container">
@@ -558,7 +566,6 @@
 
 
 <script>
-    
     const mobileMenu = document.getElementById('mobile-menu');
     const navMenu = document.querySelector('.nav-menu');
 
@@ -566,7 +573,6 @@
         navMenu.classList.toggle('active');
     });
 
-    
     document.querySelectorAll('.nav-menu a').forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
