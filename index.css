@@ -161,6 +161,42 @@ a:hover {
 }
 
 @media (max-width: 768px) {
+
+    .theme-toggle-mobile {
+        position: fixed;
+        top: 12px;
+        left: 12px;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.9);
+        color: #333;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        z-index: 1001;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+    }
+
+    .theme-toggle-mobile:hover {
+        transform: scale(1.1);
+        background-color: #f0f0f0;
+    }
+
+    .dark-mode .theme-toggle-mobile {
+        background-color: rgba(30, 30, 30, 0.9);
+        color: #eee;
+    }
+
+    .dark-mode .theme-toggle-mobile:hover {
+        background-color: #444;
+    }
+    
     .nav-container {
         display: flex;
         justify-content: flex-end;
@@ -772,7 +808,11 @@ body.dark-mode {
     transition: transform 0.4s ease, background-color 0.4s ease, color 0.4s ease;
 }
 
-#theme-toggle.click-animation {
+
+
+#theme-toggle.click-animation,
+.theme-toggle-mobile.click-animation,
+#theme-toggle-desktop.click-animation {
     transform: rotate(45deg) scale(1.1);
 }
 
