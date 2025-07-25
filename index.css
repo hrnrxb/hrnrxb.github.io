@@ -156,20 +156,20 @@ a:hover {
 }
 
 @media (max-width: 768px) {
-    .avatar {width: 100%;}
+    .avatar {width: 50%;}
 
     .navbar {
 /*          flex-wrap: wrap; */
         justify-content: center;
         flex-wrap: nowrap
         overflow-x: auto;
-        padding: 3px 0;
+        padding: 1px 0;
     }
     
     .navbar ul {
-        padding: 3px 5px;
-        margin: 0 8px;
-        font-size: 0.70em;
+        padding: 1px 3px;
+        margin: 0 4px;
+        font-size: 0.50em;
         white-space: nowrap;
     }
     .navbar a {
@@ -252,13 +252,13 @@ a.button-cta-secondary:hover {
         justify-content: center;
         flex-wrap: nowrap
         overflow-x: auto;
-        padding: 3px 0;
+        padding: 1px 0;
     }
     
     .navbar ul {
-        padding: 2px 3px;
-        margin: 0 5px;
-        font-size: 0.60em;
+        padding: 1px 2px;
+        margin: 0 3px;
+        font-size: 0.40em;
         white-space: nowrap;
     }
     
