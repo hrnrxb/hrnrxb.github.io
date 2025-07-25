@@ -378,8 +378,7 @@
                     
                 </ul>
             </div>
-        </div>  
-    </div>
+        </div>
     </div>
 
 <script src="particles.min.js"></script>
@@ -570,33 +569,42 @@
 
 
 <script>
-    const mobileMenu = document.getElementById('mobile-menu');
-    const navMenu = document.querySelector('.nav-menu');
-    const overlay = document.getElementById('overlay');
+    document.addEventListener('DOMContentLoaded', function () {
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.querySelector('.nav-menu');
+        const overlay = document.getElementById('overlay');
 
-    mobileMenu.addEventListener('click', function () {
-        navMenu.classList.toggle('active');
-        overlay.style.display = navMenu.classList.contains('active') ? 'block' : 'none';
-        setTimeout(() => {
-            overlay.style.opacity = navMenu.classList.contains('active') ? '1' : '0';
-        }, 10);
-    });
+        if (!mobileMenu || !navMenu) {
+            console.error('Navbar elements not found!');
+            return;
+        }
 
-    overlay.addEventListener('click', function () {
-        navMenu.classList.remove('active');
-        overlay.style.opacity = '0';
-        setTimeout(() => {
-            overlay.style.display = 'none';
-        }, 300);
-    });
-
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            overlay.style.opacity = '0';
+        mobileMenu.addEventListener('click', function () {
+            navMenu.classList.toggle('active');
+            overlay.style.display = navMenu.classList.contains('active') ? 'block' : 'none';
             setTimeout(() => {
-                overlay.style.display = 'none';
-            }, 300);
+                overlay.style.opacity = navMenu.classList.contains('active') ? '1' : '0';
+            }, 10);
+        });
+
+        if (overlay) {
+            overlay.addEventListener('click', function () {
+                navMenu.classList.remove('active');
+                overlay.style.opacity = '0';
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                }, 300);
+            });
+        }
+
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                overlay.style.opacity = '0';
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                }, 300);
+            });
         });
     });
 </script>
