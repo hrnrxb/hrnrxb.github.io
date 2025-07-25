@@ -574,6 +574,7 @@
         const overlay = document.getElementById('overlay');
         const closeMenu = document.getElementById('close-menu');
 
+
         mobileMenu.addEventListener('click', function () {
             navMenu.classList.add('active');
             overlay.style.display = 'block';
@@ -583,25 +584,31 @@
             this.classList.toggle('active');
         });
 
+
         overlay.addEventListener('click', function () {
             navMenu.classList.remove('active');
+            mobileMenu.classList.remove('active'); 
             overlay.style.opacity = '0';
             setTimeout(() => {
                 overlay.style.display = 'none';
             }, 300);
         });
 
+        
         closeMenu.addEventListener('click', function () {
             navMenu.classList.remove('active');
+            mobileMenu.classList.remove('active'); 
             overlay.style.opacity = '0';
             setTimeout(() => {
                 overlay.style.display = 'none';
             }, 300);
         });
+
 
         document.querySelectorAll('.nav-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
+                mobileMenu.classList.remove('active'); 
                 overlay.style.opacity = '0';
                 setTimeout(() => {
                     overlay.style.display = 'none';
