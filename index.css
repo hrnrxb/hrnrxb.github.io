@@ -160,9 +160,6 @@ a:hover {
 }
 
 @media (max-width: 768px) {
-    .mobile-only {
-        display: inline;
-    }
     
     .nav-container {
         display: flex;
@@ -179,12 +176,13 @@ a:hover {
         gap: 8px;
     }
 
-    .menu-text {
+    .menu-text.mobile-only {
         font-family: 'Open Sans', sans-serif;
         font-weight: 600;
         font-size: 0.95rem;
         color: #0366d6;
         white-space: nowrap;
+        display: inline;
     }
 
     .hamburger-lines {
@@ -269,7 +267,7 @@ a:hover {
         background-color: #64b5f6;
     }
 
-    .close-menu {
+    .close-menu.mobile-only {
         position: fixed;
         top: 20px;
         right: 20px;
@@ -291,8 +289,7 @@ a:hover {
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
-    .nav-menu.active + .nav-overlay + .close-menu,
-    .nav-menu.active ~ .close-menu {
+    .nav-menu.active ~ .close-menu.mobile-only {
         opacity: 1;
         pointer-events: auto;
     }
@@ -301,7 +298,14 @@ a:hover {
         background-color: rgba(30, 30, 30, 0.9);
         color: #eee;
     }
+    
+/*     .mobile-only {
+        display: inline;
+    }
 
+    .close-menu.mobile-only {
+        display: flex;
+    } */
     
 }
 
