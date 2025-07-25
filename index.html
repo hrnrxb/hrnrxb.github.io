@@ -20,7 +20,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-toggle" id="mobile-menu">
-                <span class="menu-text">Menu</span>
+                <span class="menu-text mobile-only">Menu</span>
                 <div class="hamburger-lines">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -39,6 +39,7 @@
                 <li><a href="#hobbies">Hobbies</a></li>
                 <li id="theme-toggle" title="Toggle Dark Mode">🌓</li>
             </ul>
+            <div class="close-menu" id="close-menu">×</div>
             <div class="nav-overlay" id="overlay"></div>
         </div>
     </nav>
@@ -573,29 +574,31 @@
         const mobileMenu = document.getElementById('mobile-menu');
         const navMenu = document.querySelector('.nav-menu');
         const overlay = document.getElementById('overlay');
-
-        if (!mobileMenu || !navMenu) {
-            console.error('Navbar elements not found!');
-            return;
-        }
+        const closeMenu = document.getElementById('close-menu');
 
         mobileMenu.addEventListener('click', function () {
-            navMenu.classList.toggle('active');
-            overlay.style.display = navMenu.classList.contains('active') ? 'block' : 'none';
+            navMenu.classList.add('active');
+            overlay.style.display = 'block';
             setTimeout(() => {
-                overlay.style.opacity = navMenu.classList.contains('active') ? '1' : '0';
+                overlay.style.opacity = '1';
             }, 10);
         });
 
-        if (overlay) {
-            overlay.addEventListener('click', function () {
-                navMenu.classList.remove('active');
-                overlay.style.opacity = '0';
-                setTimeout(() => {
-                    overlay.style.display = 'none';
-                }, 300);
-            });
-        }
+        overlay.addEventListener('click', function () {
+            navMenu.classList.remove('active');
+            overlay.style.opacity = '0';
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 300);
+        });
+
+        closeMenu.addEventListener('click', function () {
+            navMenu.classList.remove('active');
+            overlay.style.opacity = '0';
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 300);
+        });
 
         document.querySelectorAll('.nav-menu a').forEach(link => {
             link.addEventListener('click', () => {
