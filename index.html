@@ -544,28 +544,31 @@
     document.addEventListener('DOMContentLoaded', function () {
         const themeToggleMobile = document.getElementById('theme-toggle-mobile');
         const themeToggleDesktop = document.getElementById('theme-toggle-desktop');
+        const toggles = [themeToggleMobile, themeToggleDesktop].filter(t => t);
 
 
-        [themeToggleMobile, themeToggleDesktop].forEach(toggle => {
-            if (!toggle) return;
+        const isDarkMode = localStorage.getItem('dark-mode') === 'enabled';
+        if (isDarkMode) {
+            document.body.classList.add('dark-mode');
+        }
+        const icon = isDarkMode ? '☀️' : '🌓';
+        toggles.forEach(toggle => {
+            toggle.textContent = icon;
+        });
 
 
-            if (localStorage.getItem('dark-mode') === 'enabled') {
-                toggle.textContent = '☀️';
-            } else {
-                toggle.textContent = '🌓';
-            }
-
-
+        toggles.forEach(toggle => {
             toggle.addEventListener('click', function () {
                 this.classList.add('click-animation');
                 setTimeout(() => this.classList.remove('click-animation'), 400);
 
+
                 document.body.classList.toggle('dark-mode');
 
+
                 const icon = document.body.classList.contains('dark-mode') ? '☀️' : '🌓';
-                document.querySelectorAll('#theme-toggle-mobile, #theme-toggle-desktop')
-                        .forEach(t => { if (t) t.textContent = icon; });
+                toggles.forEach(t => { t.textContent = icon; });
+
 
                 localStorage.setItem('dark-mode', document.body.classList.contains('dark-mode') ? 'enabled' : 'disabled');
             });
