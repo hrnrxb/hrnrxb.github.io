@@ -670,8 +670,8 @@ a.button-cta-secondary:hover {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(0px);
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(0px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     padding: 12px 20px;
@@ -726,8 +726,8 @@ a.button-cta-secondary:hover {
 
 .navbar.scrolled {
     background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
     padding: 12px 20px;
 }
@@ -788,13 +788,15 @@ body.dark-mode {
 }
 
 .dark-mode .navbar {
-    background-color: rgba(30, 30, 30, 0.98);
+    background-color: rgba(30, 30, 30, 0.9);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .dark-mode .navbar.scrolled {
     background-color: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(2px); 
+    backdrop-filter: blur(8px); 
     -webkit-backdrop-filter: blur(2px); 
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     padding: 6px 14px;
